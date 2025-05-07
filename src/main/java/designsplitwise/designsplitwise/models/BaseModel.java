@@ -13,12 +13,12 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class) //listener will listen to the changes
 public class BaseModel {
     @Id
-    private int id;
+    private long id;
     @CreatedDate
-    private Date createdAt;
+    private Date createdAt; //createdAt and updatedAt should be populated with changes
     @UpdateTimestamp
     private Date updatedAt;
 }
